@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+
+function apigateway(){
+    var http = new XMLHttpRequest();
+    //var url = "https://4kfme9jvge.execute-api.ap-south-1.amazonaws.com/congapi";
+    //var url = "https://rknck8j4r9.execute-api.ap-south-1.amazonaws.com/CORSapi/";
+    var url = "https://kuzfet625i.execute-api.ap-south-1.amazonaws.com/xyznew/";
+    var params = "name=shubham";
+    http.open("GET", url, true);
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+            alert(http.responseText);
+        }
+    }
+   
+        http.send(JSON.stringify(params));
+}
+</script>
+</head>
+<body>
+<h1></h1>
+<input type="file" name="uploadfile" id="data"/>
+<input type="submit" value="upload" onclick="apigateway()"/>
+
+</body>
+</html>
